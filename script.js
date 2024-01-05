@@ -9,17 +9,17 @@ let bxl = new Date()
 
 
 function displayDates() {
-    let sct = document.querySelector('.stcDatesTimeZones-wrapper')
+    let sct = document.querySelector('.sctDatesTimeZones-wrapper')
     sct.innerHTML = ''
     let date1 = document.createElement('p')
     let date2 = document.createElement('p')
     let date3 = document.createElement('p')
     let date4 = document.createElement('p')
 
-    date1.classList.add('stcDatesTimeZones-wrapper-dates')
-    date2.classList.add('stcDatesTimeZones-wrapper-dates')
-    date3.classList.add('stcDatesTimeZones-wrapper-dates')
-    date4.classList.add('stcDatesTimeZones-wrapper-dates')
+    date1.classList.add('sctDatesTimeZones-wrapper-dates')
+    date2.classList.add('sctDatesTimeZones-wrapper-dates')
+    date3.classList.add('sctDatesTimeZones-wrapper-dates')
+    date4.classList.add('sctDatesTimeZones-wrapper-dates')
 
     
     sct.append(date1)
@@ -27,9 +27,27 @@ function displayDates() {
     sct.append(date3)
     sct.append(date4)
     
-    date1.append(document.createTextNode("The time at Anchorage : " + anchorage.toString()))
+    date1.append(document.createTextNode("The time at Anchorage : " + anchorage))
     date2.append(document.createTextNode("The time at Reykjavik : " + reykjavik))
     date3.append(document.createTextNode("The time at St Petersburg : " + stPetersburg))
     date4.append(document.createTextNode("The time at Bruxelles : " + bxl))
 }
 setInterval(displayDates, 1000)
+// ---------------------------------------
+
+let myBirthday = new Date('1994-05-16')
+let toNow = new Date()
+let myAgeInDays = (toNow.getTime() - myBirthday.getTime()) / (1000 * 60 * 60 * 24)
+
+console.log(Math.floor(myAgeInDays) + ' days have passed betweeen my birthday and now')
+
+function displayAge() {
+    let sct = document.querySelector('.sctMyAgeInDay-wrapper')
+    let date1 = document.createElement('p')
+    date1.classList.add('sctMyAgeInDay-wrapper-dates')
+
+    sct.append(date1)
+    date1.append(document.createTextNode(Math.floor(myAgeInDays) + ' days have passed betweeen my birthday and now'))
+}
+displayAge()
+
