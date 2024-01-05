@@ -51,3 +51,20 @@ function displayAge() {
 }
 displayAge()
 
+// ----------------------------------------
+
+let now1 = new Date()
+let future = prompt("how many hours in the fuure ?")
+
+let dateFuture = new Date(now1.setHours(now1.getHours() + parseInt(future)))
+console.log(dateFuture)
+
+function displayDateInFuture() {
+    let sct = document.querySelector('.sctDateInFuture-wrapper')
+    let date1 = document.createElement('p')
+    date1.classList.add('sctDateInFuture-wrapper-dates')
+
+    sct.append(date1)
+    date1.append(document.createTextNode("In " + parseInt(future) + " hours, the date will be " + dateFuture))
+}
+displayDateInFuture()
